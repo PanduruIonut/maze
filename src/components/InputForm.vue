@@ -2,39 +2,47 @@
   <p class="Enter form data"></p>
   <ul>
   <div>
-<label for="Width">Width</label>
-<input type="input" id="Width"  v-model="checkedNames">
-<label for="Height">Height</label>
-<input type="input" id="Height"  v-model="checkedNames">
+<input type="input" id="Width" placeholder="Width"  v-model="Width" ref="Width">
+<input type="input" id="Height" placeholder="Height" v-model="Height" ref="Height">
 </div>
 <div>
 <div class="element">
-<label for="Start">Start</label>
-<input type="input" id="Start"  v-model="checkedNames">
+<input type="input" id="Start" placeholder="Start" v-model="Start" ref="Start">
 </div>
 <div class="element">
-<label for="End">End</label>
-  <input type="input" id="End" v-model="checkedNames">
+  <input type="input" id="End" placeholder="End" v-model="End" ref="End">
   </div>
  <div class="element">
-<label for="Brick density">Brick density</label>
-<input type="input" id="Brick density"  v-model="checkedNames">
+<input type="input" id="Brick density"  placeholder="Brick density" v-model="BrickDensity" ref="BrickDensity">
 </div>
 </div>
-<button>Create maze</button>
+<button class="create-button" @click="submitForm">Create maze</button>
   </ul>
 </template>
 
 <script>
 export default {
   name: 'InputForm',
-  props: {
-    width: Number,
-    height: Number,
-    start: Number,
-    end: Number,
-    brickDensity: Number
-  }
+  data() {  
+    return{
+      Width:'',
+      Height:'',
+      Start:'',
+      End:'',
+      BrickDensity:'',
+    }
+  },
+  methods: {
+    submitForm() {
+      this.$emit('submit', { 
+        width: this.Width,
+        height: this.Height,
+        start: this.Start,
+        end: this.End,
+        BrickDensity: this.BrickDensity,
+      })
+  },
+}
 }
 </script>
 <style scoped lang="scss">

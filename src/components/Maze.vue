@@ -1,8 +1,10 @@
 <template>
   <div class="maze">
-      <div v-for="cell in schema" :key="cell.index">
-              <MazeCell></MazeCell>
+      <div v-for="rows in schema" :key="rows.index">
+          <div v-for="cell in rows" :key="cell.index">
+              <MazeCell :type="cell"></MazeCell>
           </div>
+  </div>
   </div>
 </template>
 
@@ -17,6 +19,7 @@ export default {
   },
   props: [
     'schema',
+    'path',
   ],
 setup(props) {
   const size = props.width * props.height;
