@@ -28,14 +28,14 @@ export default {
     let finish="7,7";
     let brickDensity="40";
 
-    // let schema = matrix(width,height,'0');
-    // let maze = generateBlocks(brickDensity, width,height,start.split(",")[0],start.split(",")[1],finish.split(",")[0],finish.split(",")[1],schema);
-    // console.log('maze',maze);
-    // let path = solveMaze(maze,0,0);
-    // console.log(path);
-    let maze;
-    let schema;
-    let path;
+    let schema = matrix(width,height,'0');
+    let maze = generateBlocks(brickDensity, width,height,start.split(",")[0],start.split(",")[1],finish.split(",")[0],finish.split(",")[1],schema);
+    console.log('maze',maze);
+    let path = solveMaze(maze,0,0);
+    console.log(path);
+    // let maze;
+    // let schema;
+    // let path;
 
     function matrix( rows, cols, defaultValue){
       var arr = [];
