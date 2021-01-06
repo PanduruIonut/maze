@@ -24,7 +24,6 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 General information
-Max working time is three hours, after the time expires you must send the state of the code as a zip archive for all the php/html/js/css/sql code.
 About the app
 We have an UI that contains a form which collects and validates the following information:
 * width and height;
